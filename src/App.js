@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
 
+import { Route, Routes } from 'react-router-dom';
+import Dashboard from './Pages/Dashboard';
+import FloorManagement from './Pages/FloorManagement';
+import RoomTypeManagement from './Pages/RoomTypeManagement';
+import Room from './Pages/RoomManagement';
+import Report from './Pages/Report';
+import RentManagement from './Pages/RentManagement';
+import Renter from './Pages/RenterManagement';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/' element={<Dashboard />} />
+      <Route path='/floor' element={<FloorManagement />} />
+      <Route path='/roomtype' element={<RoomTypeManagement />} />
+      <Route path='/room' element={<Room />} />
+      <Route path='/report' element={<Report />} />
+      <Route path='/rent' element={<RentManagement />} />
+      <Route path='/renter' element={<Renter />} />
+    </Routes>
   );
 }
 
